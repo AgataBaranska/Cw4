@@ -144,7 +144,8 @@ namespace Cw4.DAL
                 com.Parameters.AddWithValue("index", index);
                 con.Open();
                 SqlDataReader dr = com.ExecuteReader();
-
+                
+                if(!dr.HasRows())return null;
 
                 var stEnrollment = new StudentsEnrollment();
                 while (dr.Read())
